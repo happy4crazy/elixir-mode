@@ -79,6 +79,8 @@
   "private"
   "def"
   "defp"
+  "defmodule"
+  "defrecord"
   "if"
   "when"
   "case"
@@ -171,6 +173,7 @@
   (list
     '("%.*$" . font-lock-comment-face)                                                                                                  ; comments
     '("^\\s *defp?\\s +\\([^( \t\n]+\\)" 1 font-lock-function-name-face)                                                                  ; methods
+    '("^\\s *def\\(module\\|record\\)\\s +\\([^( \t\n,]+\\)" 2 font-lock-type-face)                                                            ; module definition
     `(,(concat "\\<" (regexp-opt elixir-mode-keyword-names t) "\\>") . font-lock-keyword-face)                                          ; keywords
     `(,(concat "\\<" (regexp-opt elixir-mode-builtin-names t) "\\>") . font-lock-builtin-face)                                          ; builtins
     `(,(concat "\\<" (regexp-opt elixir-mode-module-names t) "\\>") . font-lock-type-face)                                              ; core modules
