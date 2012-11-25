@@ -76,8 +76,9 @@
   "after"
   "for"
   "module"
-	"private"
+  "private"
   "def"
+  "defp"
   "if"
   "when"
   "case"
@@ -169,7 +170,7 @@
 (defconst elixir-mode-font-lock-defaults
   (list
     '("%.*$" . font-lock-comment-face)                                                                                                  ; comments
-    '("^\\s *def\\s +\\([^( \t\n]+\\)" . font-lock-function-name-face)                                                                  ; methods
+    '("^\\s *defp?\\s +\\([^( \t\n]+\\)" 1 font-lock-function-name-face)                                                                  ; methods
     `(,(concat "\\<" (regexp-opt elixir-mode-keyword-names t) "\\>") . font-lock-keyword-face)                                          ; keywords
     `(,(concat "\\<" (regexp-opt elixir-mode-builtin-names t) "\\>") . font-lock-builtin-face)                                          ; builtins
     `(,(concat "\\<" (regexp-opt elixir-mode-module-names t) "\\>") . font-lock-type-face)                                              ; core modules
